@@ -1,5 +1,3 @@
-import token
-
 from antlr4 import *
 from ExprLexer import ExprLexer
 from ExprParser import ExprParser
