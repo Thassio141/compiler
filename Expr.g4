@@ -1,39 +1,49 @@
 grammar Expr;
+
 import lexerExpr;
 
-start_: PROGRAM ID bloco END;
+prog: PROGRAM ID PVIG decls cmdComp PONTO;
 
-bloco: decl_vars comandos;
+decls: VAR listDecl | ;
 
-decl_vars: var_decl (';' var_decl)* ';';
+listDecl: declTip | declTip VIG listDecl;
 
-var_decl: tipo ID;
+declTip: listId DPONTOS tip PVIG;
 
-tipo: INTEGER | BOOLEAN;
+listId: ID | ID VIG listId;
 
-comandos: comando (';' comando)* ';';
+tip: INTEGER | BOOLEAN | CADEIA;
 
-comando:
-    atrib
-    | leitura
-    | escrita
-    | condicional
-    | loop;
+cmdComp: BEGIN listCmd END;
 
-atrib: ID ATRIB expr;
+listCmd: cmd | cmd PVIG listCmd;
 
-leitura: READ '(' ID ')';
+cmd:
+  cmdIf
+  | cmdWhile
+  | cmdRead
+  | cmdWrite
+  | cmdAtrib
+  | cmdComp;
 
-escrita: WRITE '(' expr ')';
+cmdIf: IF expr THEN cmd | IF expr THEN cmd ELSE cmd;
 
-condicional: IF expr THEN comandos ENDIF;
+cmdWhile: WHILE expr DO cmd;
 
-loop: WHILE expr DO comandos ENDWHILE;
+cmdRead: READ ABPAR listId FPAR;
 
-expr: expr_simples (OPREL expr_simples)?;
+cmdWrite: WRITE ABPAR listW FPAR;
 
-expr_simples:
-    OPNEG expr_simples
-    | CTE
-    | ID
-    | '(' expr ')';
+listW: elemW | elemW VIG listW;
+
+elemW: expr | CADEIA;
+
+cmdAtrib: ID ATRIB expr ;
+
+expr: minExpr | minExpr (OPREL) minExpr;
+
+minExpr: term | term (OPAD) minExpr;
+
+term: fat (OPMULT) term | fat;
+
+fat: ID | INT | ABPAR expr FPAR | TRUE | FALSE | OPNEG fat;

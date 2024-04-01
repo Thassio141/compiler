@@ -8,12 +8,147 @@ else:
 # This class defines a complete listener for a parse tree produced by ExprParser.
 class ExprListener(ParseTreeListener):
 
-    # Enter a parse tree produced by ExprParser#start_.
-    def enterStart_(self, ctx:ExprParser.Start_Context):
+    # Enter a parse tree produced by ExprParser#prog.
+    def enterProg(self, ctx:ExprParser.ProgContext):
         pass
 
-    # Exit a parse tree produced by ExprParser#start_.
-    def exitStart_(self, ctx:ExprParser.Start_Context):
+    # Exit a parse tree produced by ExprParser#prog.
+    def exitProg(self, ctx:ExprParser.ProgContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#decls.
+    def enterDecls(self, ctx:ExprParser.DeclsContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#decls.
+    def exitDecls(self, ctx:ExprParser.DeclsContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#listDecl.
+    def enterListDecl(self, ctx:ExprParser.ListDeclContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#listDecl.
+    def exitListDecl(self, ctx:ExprParser.ListDeclContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#declTip.
+    def enterDeclTip(self, ctx:ExprParser.DeclTipContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#declTip.
+    def exitDeclTip(self, ctx:ExprParser.DeclTipContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#listId.
+    def enterListId(self, ctx:ExprParser.ListIdContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#listId.
+    def exitListId(self, ctx:ExprParser.ListIdContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#tip.
+    def enterTip(self, ctx:ExprParser.TipContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#tip.
+    def exitTip(self, ctx:ExprParser.TipContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#cmdComp.
+    def enterCmdComp(self, ctx:ExprParser.CmdCompContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#cmdComp.
+    def exitCmdComp(self, ctx:ExprParser.CmdCompContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#listCmd.
+    def enterListCmd(self, ctx:ExprParser.ListCmdContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#listCmd.
+    def exitListCmd(self, ctx:ExprParser.ListCmdContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#cmd.
+    def enterCmd(self, ctx:ExprParser.CmdContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#cmd.
+    def exitCmd(self, ctx:ExprParser.CmdContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#cmdIf.
+    def enterCmdIf(self, ctx:ExprParser.CmdIfContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#cmdIf.
+    def exitCmdIf(self, ctx:ExprParser.CmdIfContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#cmdWhile.
+    def enterCmdWhile(self, ctx:ExprParser.CmdWhileContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#cmdWhile.
+    def exitCmdWhile(self, ctx:ExprParser.CmdWhileContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#cmdRead.
+    def enterCmdRead(self, ctx:ExprParser.CmdReadContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#cmdRead.
+    def exitCmdRead(self, ctx:ExprParser.CmdReadContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#cmdWrite.
+    def enterCmdWrite(self, ctx:ExprParser.CmdWriteContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#cmdWrite.
+    def exitCmdWrite(self, ctx:ExprParser.CmdWriteContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#listW.
+    def enterListW(self, ctx:ExprParser.ListWContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#listW.
+    def exitListW(self, ctx:ExprParser.ListWContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#elemW.
+    def enterElemW(self, ctx:ExprParser.ElemWContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#elemW.
+    def exitElemW(self, ctx:ExprParser.ElemWContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#cmdAtrib.
+    def enterCmdAtrib(self, ctx:ExprParser.CmdAtribContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#cmdAtrib.
+    def exitCmdAtrib(self, ctx:ExprParser.CmdAtribContext):
         pass
 
 
@@ -26,12 +161,30 @@ class ExprListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by ExprParser#atom.
-    def enterAtom(self, ctx:ExprParser.AtomContext):
+    # Enter a parse tree produced by ExprParser#minExpr.
+    def enterMinExpr(self, ctx:ExprParser.MinExprContext):
         pass
 
-    # Exit a parse tree produced by ExprParser#atom.
-    def exitAtom(self, ctx:ExprParser.AtomContext):
+    # Exit a parse tree produced by ExprParser#minExpr.
+    def exitMinExpr(self, ctx:ExprParser.MinExprContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#term.
+    def enterTerm(self, ctx:ExprParser.TermContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#term.
+    def exitTerm(self, ctx:ExprParser.TermContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#fat.
+    def enterFat(self, ctx:ExprParser.FatContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#fat.
+    def exitFat(self, ctx:ExprParser.FatContext):
         pass
 
 

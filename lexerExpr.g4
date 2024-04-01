@@ -1,8 +1,7 @@
 lexer grammar lexerExpr;
 
-// Regras de tokens
+COMMENT: '/' ~[/\r\n]* '/' -> skip;
 
-// Palavras reservadas
 PROGRAM: 'PROGRAM';
 INTEGER: 'INTEGER';
 BOOLEAN: 'BOOLEAN';
@@ -15,21 +14,21 @@ VAR: 'VAR';
 FALSE: 'FALSE';
 TRUE: 'TRUE';
 WRITE: 'WRITE';
+IF: 'IF';
+THEN: 'THEN';
+ELSE: 'ELSE';
 
-// Operadores aritméticos
+INT: [-]?[0-9]+;
+
 OPAD: '+' | '-';
 OPMULT: '*' | '/';
 
-// Operadores relacionais
 OPREL: '>' | '<' | '>=' | '<=' | '==' | '<>';
 
-// Operadores lógicos
 OPLOG: 'OR' | 'AND';
 
-// Operador de negação
 OPNEG: '~';
 
-// Símbolos
 PVIG: ';';
 PONTO: '.';
 DPONTOS: ':';
@@ -38,15 +37,9 @@ ABPAR: '(';
 FPAR: ')';
 ATRIB: ':=';
 
-// Identificadores e constantes
-ID: [a-zA-Z][a-zA-Z0-9_]*;
-CTE: [0-9]+;
+CADEIA: '\'' ('\'\'' | ~ ('\''))* '\'';
 
-// Comentários
-COMMENT: '//'.*'\n';
-
-// Espaços em branco
 WS: [ \t\r\n]+ -> skip;
 
-// Ignorar outros caracteres
-OTHER: .;
+ID: [a-zA-Z][a-zA-Z0-9_]*;
+
