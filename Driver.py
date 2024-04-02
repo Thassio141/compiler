@@ -49,8 +49,11 @@ def main(argv):
 
     for token in tokens:
         if token_numero[token.type] == "ID" and len(token.text) > 16:
-            print(f"Erro palavra {token.text} tem mais de 16 caracteres")
+            print(f"Erro ID {token.text} tem mais de 16 caracteres")
             erro = True
+        # if token_numero[token.type] == "CTE" and int(token.text) > 32767 or int(token.text) < -32768:
+        #     print(f"Erro CTE {token.text} é maior que 2 bytes")
+        #     erro = True
 
     if not erro:
         for token in tokens:

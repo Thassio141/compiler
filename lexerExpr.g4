@@ -43,3 +43,4 @@ WS: [ \t\r\n]+ -> skip;
 
 ID: [a-zA-Z][a-zA-Z0-9_]*;
 
+CTE: [0-9]+;
