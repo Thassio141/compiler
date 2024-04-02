@@ -1,6 +1,6 @@
 lexer grammar lexerExpr;
 
-COMMENT: '/' ~[/\r\n]* '/' -> skip;
+COMMENT: '//' ~[/\r\n]* -> skip;
 
 PROGRAM: 'PROGRAM';
 INTEGER: 'INTEGER';

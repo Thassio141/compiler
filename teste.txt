@@ -1,9 +1,9 @@
 PROGRAM exemplo;
 
 VAR a, b: INTEGER;
-/ teste comentairo /
+
+//teste comentario
 BEGIN
-/ teste comentairo /
   READ(a, b);
   IF a > b THEN
     BEGIN

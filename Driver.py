@@ -45,8 +45,16 @@ def main(argv):
     parser = ExprParser(stream)
     tokens = lexer.getAllTokens()
 
+    erro = False
+
     for token in tokens:
-        print(f"Tipo {token_numero[token.type]}, Nome {token.text}")
+        if token_numero[token.type] == "ID" and len(token.text) > 16:
+            print(f"Erro palavra {token.text} tem mais de 16 caracteres")
+            erro = True
+
+    if not erro:
+        for token in tokens:
+            print(f"Tipo {token_numero[token.type]}, Nome {token.text} , Tamanho {len(token.text)}")
 
     tree = parser.prog()
 
