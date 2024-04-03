@@ -18,8 +18,6 @@ IF: 'IF';
 THEN: 'THEN';
 ELSE: 'ELSE';
 
-INT: [-]?[0-9]+;
-
 OPAD: '+' | '-';
 OPMULT: '*' | '/';
 
@@ -41,6 +39,6 @@ CADEIA: '\'' ('\'\'' | ~ ('\''))* '\'';
 
 WS: [ \t\r\n]+ -> skip;
 
-ID: [a-zA-Z][a-zA-Z0-9_]*;
+ID: [a-zA-Z][a-zA-Z0-9]*;
 
-CTE: [0-9]+;
+CTE: [+-]?[0-9]+;

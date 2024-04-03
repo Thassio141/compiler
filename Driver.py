@@ -19,22 +19,22 @@ token_numero = {
     14: "IF",
     15: "THEN",
     16: "ELSE",
-    17: "INT",
-    18: "OPAD",
-    19: "OPMULT",
-    20: "OPREL",
-    21: "OPLOG",
-    22: "OPNEG",
-    23: "PVIG",
-    24: "PONTO",
-    25: "DPONTOS",
-    26: "VIG",
-    27: "ABPAR",
-    28: "FPAR",
-    29: "ATRIB",
-    30: "CADEIA",
-    31: "WS",
-    32: "ID",
+    17: "OPAD",
+    18: "OPMULT",
+    19: "OPREL",
+    20: "OPLOG",
+    21: "OPNEG",
+    22: "PVIG",
+    23: "PONTO",
+    24: "DPONTOS",
+    25: "VIG",
+    26: "ABPAR",
+    27: "FPAR",
+    28: "ATRIB",
+    29: "CADEIA",
+    30: "WS",
+    31: "ID",
+    32: "CTE"
 }
 
 
@@ -45,19 +45,15 @@ def main(argv):
     parser = ExprParser(stream)
     tokens = lexer.getAllTokens()
 
-    erro = False
+    for token in tokens:
+        if token.type == 31 and len(token.text) > 16:
+            raise ValueError(f"Erro ID {token.text} tem mais de 16 caracteres")
+        elif token.type == 32:
+            if int(token.text) > 32767 or int(token.text) < -32768:
+                raise ValueError(f"Erro CTE {token.text} é maior que 2 bytes")
 
     for token in tokens:
-        if token_numero[token.type] == "ID" and len(token.text) > 16:
-            print(f"Erro ID {token.text} tem mais de 16 caracteres")
-            erro = True
-        # if token_numero[token.type] == "CTE" and int(token.text) > 32767 or int(token.text) < -32768:
-        #     print(f"Erro CTE {token.text} é maior que 2 bytes")
-        #     erro = True
-
-    if not erro:
-        for token in tokens:
-            print(f"Tipo {token_numero[token.type]}, Nome {token.text} , Tamanho {len(token.text)}")
+        print(f"Tipo {token_numero[token.type]}, Nome {token.text} , Tamanho {len(token.text)}")
 
     tree = parser.prog()
 

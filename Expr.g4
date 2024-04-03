@@ -24,9 +24,12 @@ cmd:
   | cmdRead
   | cmdWrite
   | cmdAtrib
-  | cmdComp;
+  | cmdComp
+  | cmdIfElse;
 
-cmdIf: IF expr THEN cmd | IF expr THEN cmd ELSE cmd;
+cmdIf: IF expr THEN cmd;
+
+cmdIfElse: IF expr THEN cmd ELSE cmd;
 
 cmdWhile: WHILE expr DO cmd;
 
@@ -38,12 +41,12 @@ listW: elemW | elemW VIG listW;
 
 elemW: expr | CADEIA;
 
-cmdAtrib: ID ATRIB expr ;
+cmdAtrib: ID ATRIB expr;
 
-expr: minExpr | minExpr (OPREL) minExpr;
+expr: exprAd | exprAd (OPREL) exprAd;
 
-minExpr: term | term (OPAD) minExpr;
+exprAd: exprMult | exprMult (OPAD) exprAd;
 
-term: fat (OPMULT) term | fat;
+exprMult: exprDif (OPMULT) exprMult | exprDif;
 
-fat: ID | INT | ABPAR expr FPAR | TRUE | FALSE | OPNEG fat;
+exprDif: ID | CTE | ABPAR expr FPAR | TRUE | FALSE | OPNEG exprDif;

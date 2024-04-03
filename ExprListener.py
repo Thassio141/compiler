@@ -98,6 +98,15 @@ class ExprListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by ExprParser#cmdIfElse.
+    def enterCmdIfElse(self, ctx:ExprParser.CmdIfElseContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#cmdIfElse.
+    def exitCmdIfElse(self, ctx:ExprParser.CmdIfElseContext):
+        pass
+
+
     # Enter a parse tree produced by ExprParser#cmdWhile.
     def enterCmdWhile(self, ctx:ExprParser.CmdWhileContext):
         pass
@@ -161,30 +170,30 @@ class ExprListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by ExprParser#minExpr.
-    def enterMinExpr(self, ctx:ExprParser.MinExprContext):
+    # Enter a parse tree produced by ExprParser#exprAd.
+    def enterExprAd(self, ctx:ExprParser.ExprAdContext):
         pass
 
-    # Exit a parse tree produced by ExprParser#minExpr.
-    def exitMinExpr(self, ctx:ExprParser.MinExprContext):
-        pass
-
-
-    # Enter a parse tree produced by ExprParser#term.
-    def enterTerm(self, ctx:ExprParser.TermContext):
-        pass
-
-    # Exit a parse tree produced by ExprParser#term.
-    def exitTerm(self, ctx:ExprParser.TermContext):
+    # Exit a parse tree produced by ExprParser#exprAd.
+    def exitExprAd(self, ctx:ExprParser.ExprAdContext):
         pass
 
 
-    # Enter a parse tree produced by ExprParser#fat.
-    def enterFat(self, ctx:ExprParser.FatContext):
+    # Enter a parse tree produced by ExprParser#exprMult.
+    def enterExprMult(self, ctx:ExprParser.ExprMultContext):
         pass
 
-    # Exit a parse tree produced by ExprParser#fat.
-    def exitFat(self, ctx:ExprParser.FatContext):
+    # Exit a parse tree produced by ExprParser#exprMult.
+    def exitExprMult(self, ctx:ExprParser.ExprMultContext):
+        pass
+
+
+    # Enter a parse tree produced by ExprParser#exprDif.
+    def enterExprDif(self, ctx:ExprParser.ExprDifContext):
+        pass
+
+    # Exit a parse tree produced by ExprParser#exprDif.
+    def exitExprDif(self, ctx:ExprParser.ExprDifContext):
         pass
 
 
